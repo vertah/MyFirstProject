@@ -5,9 +5,15 @@
 
 namespace MyFirstProject
 {
+
     class Program
     {
-        static void Main(string[] args)
+
+
+
+
+
+    static void Main(string[] args)
         {
             // Main code goes in here
             /* This is a 
@@ -55,24 +61,38 @@ namespace MyFirstProject
 
 
 
+
+
+
+
             Console.WriteLine("What is your name?");
             Console.Write("Name: ");
             var name = Console.ReadLine();
 
             Console.WriteLine("What is your age?");
             Console.Write("Age: ");
-            Int32.TryParse(Console.ReadLine(),out int age);
+            Int32.TryParse(Console.ReadLine(), out int age);
 
             Console.WriteLine("What is your Weight? (in kg)");
             Console.Write("Weight: ");
-            Int32.TryParse(Console.ReadLine(), out int weight);
+            Double.TryParse(Console.ReadLine(), out double weight);
 
 
             Console.WriteLine("What is your Height? (in cm)");
             Console.Write("Height: ");
             Double.TryParse(Console.ReadLine(), out double height);
 
-            double bmi = Math.Round(weight / Math.Pow(height / 100, 2),2);
+
+            double Calcbmi(double heightincm, double weightinkg)
+            {
+                return Math.Round(weightinkg / Math.Pow(heightincm / 100, 2), 2);
+
+            }
+
+
+
+
+            // double bmi = Math.Round(weight / Math.Pow(height / 100, 2),2);
 
             // Console.WriteLine("Weight: " + weight + " Height: " + height + " Supposed height^2: " + Math.Pow(height / 100, 2) + "");
 
@@ -84,8 +104,8 @@ namespace MyFirstProject
 
 
             Console.WriteLine("Hello " + name + " you are " + age + " years old");
-            Console.WriteLine("Youre height is " + height + " and your weight is " + weight + "");
-            Console.WriteLine("Youre BMI is: " + bmi);
+            Console.WriteLine("Your height is " + height + "cm and your weight is " + weight + "kg");
+            Console.WriteLine("Your BMI is: " + Calcbmi(height, weight));
 
 
 
