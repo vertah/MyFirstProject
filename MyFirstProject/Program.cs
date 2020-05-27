@@ -46,7 +46,7 @@ namespace MyFirstProject
                     Console.WriteLine("What is your age?");
                     Console.Write("Age: ");
                     if (Int32.TryParse(Console.ReadLine(), out int properage)) { if (!Program.Sanitize(properage)) { return properage; } };
-                    Console.WriteLine("Invalid age entered, please try again.");
+                    Console.WriteLine("Invalid age entered. You entered " + properage + ". please try again.");
                 }
                 return 0;
                 
@@ -58,10 +58,10 @@ namespace MyFirstProject
                 int cycle = 0;
                 while (cycle == 0)
                 {
-                    Console.WriteLine("What is your weight?");
+                    Console.WriteLine("What is your weight? (in Kg)");
                     Console.Write("Weight: ");
                     if (Int32.TryParse(Console.ReadLine(), out int properweight)) { if (!Program.Sanitize(properweight)) { return properweight; } };
-                    Console.WriteLine("Invalid weight entered, please try again.");
+                    Console.WriteLine("Invalid weight entered. You entered " + properweight + ". please try again.");
                 }
                 return 0;
 
@@ -73,10 +73,10 @@ namespace MyFirstProject
                 int cycle = 0;
                 while (cycle == 0)
                 {
-                    Console.WriteLine("What is your height?");
+                    Console.WriteLine("What is your height? (in CM)");
                     Console.Write("Height: ");
                     if (Int32.TryParse(Console.ReadLine(), out int properheight)) { if (!Program.Sanitize(properheight)) { return properheight; } };
-                    Console.WriteLine("Invalid height entered, please try again.");
+                    Console.WriteLine("Invalid height entered. You entered " + properheight + ". please try again.");
                 }
                 return 0;
 
