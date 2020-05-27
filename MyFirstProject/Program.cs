@@ -2,77 +2,111 @@
 
 
 
-
 namespace MyFirstProject
 {
 
     class Program
     {
 
-
-
-
-
-    static void Main(string[] args)
+    public static bool Sanitize(double value)
         {
-            // Main code goes in here
-            /* This is a 
-             * Big Bock
-             * of comments.
-             * 
-             */
+            if (value <= 0 | value >= 200)
+            {
+                return true;
+            }
+            return false;
+        }
+
+    public static bool Sanitize(int value)
+        {
+            if (value <= 0 | value >= 200)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
+        static void Main(string[] args)
+        {
 
-            // 32 bit
-            //int smallnumber = 35;
-            // 63 bit
-            //long abignumber = 99999999999;
+            double Calcbmi(double heightincm, double weightinkg)
+            {
 
-            // fractions
-            // floats are fast, 32 bit
+                return Math.Round(weightinkg / ((heightincm / 100) * (heightincm / 100)));
+                //return Math.Round(weightinkg / Math.Pow(heightincm / 100, 2), 2);
 
-            //float somefrac = 80.5f;
+            }
 
-            // double precision compared:
-            // doubles are slower, 64 bit, default number type with fraction
-            //double twoandahalf = 2.5;
+            int getage()
+            {
+                int cycle = 0;
+                while (cycle == 0)
+                {
+                    Console.WriteLine("What is your age?");
+                    Console.Write("Age: ");
+                    if (Int32.TryParse(Console.ReadLine(), out int properage)) { if (!Program.Sanitize(properage)) { return properage; } };
+                    Console.WriteLine("Invalid age entered, please try again.");
+                }
+                return 0;
+                
 
+            }
 
-
-            // decimal for money and scientific numbers, 128 bit
-            //decimal money = (decimal)10000000000000000000.1324233453462357527;
-
-
-            // string is used for text, need (")
-            //string myname = "Paul";
-
-            // char for a single letter use (')
-            //char aletter = 'k';
-
-            // boolean, true/false
-            //bool somethingtrue = true;
-            //bool somethingfalse = false;
-
-
-            // var can be used to define a variable with a type
-            //var vardone = "Variables done!";
-            //var somemoremoney = 313423.2435245;
-
-
-
-
+            int getweight()
+            {
+                int cycle = 0;
+                while (cycle == 0)
+                {
+                    Console.WriteLine("What is your weight?");
+                    Console.Write("Weight: ");
+                    if (Int32.TryParse(Console.ReadLine(), out int properweight)) { if (!Program.Sanitize(properweight)) { return properweight; } };
+                    Console.WriteLine("Invalid weight entered, please try again.");
+                }
+                return 0;
 
 
+            }
 
+            int getheight()
+            {
+                int cycle = 0;
+                while (cycle == 0)
+                {
+                    Console.WriteLine("What is your height?");
+                    Console.Write("Height: ");
+                    if (Int32.TryParse(Console.ReadLine(), out int properheight)) { if (!Program.Sanitize(properheight)) { return properheight; } };
+                    Console.WriteLine("Invalid height entered, please try again.");
+                }
+                return 0;
+
+
+            }
             Console.WriteLine("What is your name?");
             Console.Write("Name: ");
             var name = Console.ReadLine();
 
-            Console.WriteLine("What is your age?");
-            Console.Write("Age: ");
-            Int32.TryParse(Console.ReadLine(), out int age);
+            //bool parseage = Int32.TryParse(Console.ReadLine(), out int age);
 
+            // int i = 0;
+            // do
+            //{
+            //     Console.WriteLine("What is your age?");
+            //     Console.Write("Age: ");
+            //     Int32.TryParse(Console.ReadLine(), out int age);
+            //     if (Program.Sanitize(age)) { Console.WriteLine("Invalid age, please try again."); } else { i++; }
+            //    age = currage;
+            // } while (i == 0);
+
+
+            //Console.WriteLine("What is your age?");
+            //Console.Write("Age: ");
+            //Int32.TryParse(Console.ReadLine(), out int age);
+
+           
+
+
+            /*
             Console.WriteLine("What is your Weight? (in kg)");
             Console.Write("Weight: ");
             Double.TryParse(Console.ReadLine(), out double weight);
@@ -81,17 +115,9 @@ namespace MyFirstProject
             Console.WriteLine("What is your Height? (in cm)");
             Console.Write("Height: ");
             Double.TryParse(Console.ReadLine(), out double height);
+            */
 
-
-            double Calcbmi(double heightincm, double weightinkg)
-            {
-                return Math.Round(weightinkg / Math.Pow(heightincm / 100, 2), 2);
-
-            }
-
-
-
-
+            
             // double bmi = Math.Round(weight / Math.Pow(height / 100, 2),2);
 
             // Console.WriteLine("Weight: " + weight + " Height: " + height + " Supposed height^2: " + Math.Pow(height / 100, 2) + "");
@@ -101,6 +127,20 @@ namespace MyFirstProject
             Console.WriteLine();
 
             //Console.WriteLine(Math.Round(bmi,2));
+
+
+            int age = getage();
+            int weight = getweight();
+            int height = getheight();
+
+
+            // Sanitation testing
+
+            // if (Program.Sanitize(age)) { Console.WriteLine("Wrong age"); }
+
+            // if (Program.Sanitize(weight)) { Console.WriteLine("Wrong weight"); }
+
+            // if (Program.Sanitize(height)) { Console.WriteLine("Wrong height"); }
 
 
             Console.WriteLine("Hello " + name + " you are " + age + " years old");
